@@ -35,19 +35,13 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "votingContractAddress",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "votingImplementation",
-        "type": "address"
+        "indexed": false,
+        "internalType": "uint24",
+        "name": "protocolFeePercentage",
+        "type": "uint24"
       }
     ],
-    "name": "VotingContractCreated",
+    "name": "ProtocolFeePercentageUpdated",
     "type": "event"
   },
   {
@@ -56,24 +50,37 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "votingContractAddress",
+        "name": "protocolTreasuryAddress",
         "type": "address"
       }
     ],
-    "name": "VotingContractUpdated",
+    "name": "ProtocolTreasuryUpdated",
     "type": "event"
   },
   {
     "inputs": [],
-    "name": "create",
+    "name": "DENOMINATOR",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "uint24",
         "name": "",
-        "type": "address"
+        "type": "uint24"
       }
     ],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "VERSION",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -89,6 +96,32 @@
     "outputs": [
       {
         "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "protocolFeePercentage",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "protocolTreasury",
+    "outputs": [
+      {
+        "internalType": "address payable",
         "name": "",
         "type": "address"
       }
@@ -119,27 +152,27 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "newVotingContract",
-        "type": "address"
+        "internalType": "uint24",
+        "name": "_protocolFeePercentage",
+        "type": "uint24"
       }
     ],
-    "name": "updateVotingContract",
+    "name": "updateProtocolFeePercentage",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "votingContract",
-    "outputs": [
+    "inputs": [
       {
-        "internalType": "address",
-        "name": "",
+        "internalType": "address payable",
+        "name": "_protocolTreasury",
         "type": "address"
       }
     ],
-    "stateMutability": "view",
+    "name": "updateProtocolTreasury",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]

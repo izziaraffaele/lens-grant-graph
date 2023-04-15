@@ -18,6 +18,7 @@
     "prepare:local": "mustache config/localhost.json subgraph.template.yaml > subgraph.yaml",
     "prepare:fantom-testnet": "mustache config/fantom-testnet.json subgraph.template.yaml > subgraph.yaml",
     "prepare:fantom": "mustache config/fantom.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:mumbai": "mustache config/mumbai.json subgraph.template.yaml > subgraph.yaml",
     "codegen": "graph codegen",
     "build": "graph build",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ thelostone-mc/program-factory",
@@ -31,6 +32,7 @@
     "@openzeppelin/subgraphs": "^0.1.8"
   },
   "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.46.1",
     "matchstick-as": "^0.5.0",
     "mustache": "^4.2.0"
   }
